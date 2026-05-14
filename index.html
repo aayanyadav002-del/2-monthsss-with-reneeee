@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2 Months With You ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f0b1a;
+    color:white;
+    overflow-x:hidden;
+}
+
+section{
+    min-height:100vh;
+    padding:80px 10%;
+    position:relative;
+}
+
+/* LOADING SCREEN */
+#loader{
+    position:fixed;
+    inset:0;
+    background:#0d0617;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:9999;
+}
+
+.loader-heart{
+    font-size:70px;
+    animation:pulse 1.2s infinite;
+}
+
+.loader-text{
+    margin-top:20px;
+    font-size:1.2rem;
+    text-align:center;
+    color:#ffd6eb;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1)}
+    50%{transform:scale(1.2)}
+    100%{transform:scale(1)}
+}
+
+/* HERO */
+.hero{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#ffb6d9,#cdb4ff,#ff8fab);
+    overflow:hidden;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle,rgba(255,255,255,0.15) 10%,transparent 10%);
+    background-size:40px 40px;
+    animation:moveBg 30s linear infinite;
+}
+
+@keyframes moveBg{
+    from{transform:translateY(0)}
+    to{transform:translateY(-200px)}
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.main-title{
+    font-family:'Pacifico',cursive;
+    font-size:4rem;
+    margin-bottom:20px;
+    text-shadow:0 0 20px rgba(255,255,255,0.6);
+}
+
+.typewriter{
+    font-size:1.3rem;
+    margin-bottom:25px;
+    overflow:hidden;
+    border-right:3px solid white;
+    white-space:nowrap;
+    width:0;
+    animation:typing 4s steps(50,end) forwards, blink .7s infinite;
+}
+
+@keyframes typing{
+    from{width:0}
+    to{width:100%}
+}
+
+@keyframes blink{
+    50%{border-color:transparent}
+}
+
+.couple-photo{
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid white;
+    box-shadow:0 0 30px rgba(255,255,255,0.6);
+    margin:20px auto;
+}
+
+.timer{
+    font-size:1.2rem;
+    margin-top:20px;
+    background:rgba(255,255,255,0.15);
+    padding:15px 30px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    display:inline-block;
+}
+
+.btns{
+    margin-top:35px;
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 28px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#ff4f9a;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    text-decoration:none;
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.05);
+}
+
+/* SECTION HEADINGS */
+.heading{
+    font-size:3rem;
+    text-align:center;
+    margin-bottom:50px;
+    color:#ffd6eb;
+}
+
+/* TIMELINE */
+.timeline{
+    background:#1a1229;
+}
+
+.timeline-container{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+}
+
+.timeline-card{
+    background:rgba(255,255,255,0.08);
+    padding:30px;
+    border-radius:25px;
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.4s;
+}
+
+.timeline-card:hover{
+    transform:translateY(-8px);
+}
+
+.timeline-card h3{
+    color:#ffb6d9;
+    margin-bottom:10px;
+}
+
+/* LOVE CARDS */
+.love-section{
+    background:linear-gradient(to bottom,#2a163f,#12091e);
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.card{
+    height:220px;
+    perspective:1000px;
+}
+
+.card-inner{
+    width:100%;
+    height:100%;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:transform 0.8s;
+}
+
+.card:hover .card-inner{
+    transform:rotateY(180deg);
+}
+
+.card-front,
+.card-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    border-radius:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.card-front{
+    background:#ff8fab;
+    font-size:3rem;
+}
+
+.card-back{
+    background:#fff0f7;
+    color:#5e2b52;
+    transform:rotateY(180deg);
+    font-weight:500;
+}
+
+/* GALAXY */
+.galaxy{
+    background:black;
+    overflow:hidden;
+}
+
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+    inset:0;
+}
+
+.star{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:0.3}
+    to{opacity:1}
+}
+
+.galaxy-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+}
+
+.galaxy-text{
+    max-width:700px;
+    margin:auto;
+    font-size:1.3rem;
+    line-height:2;
+}
+
+/* GALLERY */
+.gallery{
+    background:#20112f;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.polaroid{
+    background:white;
+    color:black;
+    padding:15px;
+    border-radius:12px;
+    transform:rotate(-2deg);
+    transition:0.4s;
+}
+
+.polaroid:hover{
+    transform:rotate(0deg) scale(1.05);
+}
+
+.polaroid img{
+    width:100%;
+    border-radius:10px;
+}
+
+.caption{
+    text-align:center;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+/* ENVELOPE */
+.surprise{
+    background:linear-gradient(to bottom,#14071d,#2b103c);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+.envelope{
+    width:220px;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.envelope:hover{
+    transform:scale(1.1);
+}
+
+.letter{
+    max-width:700px;
+    margin-top:40px;
+    background:rgba(255,255,255,0.1);
+    padding:40px;
+    border-radius:25px;
+    display:none;
+    backdrop-filter:blur(12px);
+    line-height:2;
+}
+
+/* FINAL */
+.final{
+    background:linear-gradient(to top,#090510,#1c1030);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+.final h1{
+    font-size:4rem;
+    font-family:'Pacifico',cursive;
+    color:#ffd6eb;
+}
+
+.final p{
+    font-size:1.4rem;
+    margin-top:20px;
+}
+
+.big-heart{
+    font-size:100px;
+    margin-top:30px;
+    animation:pulse 1.5s infinite;
+}
+
+/* FLOATING HEARTS */
+.heart{
+    position:fixed;
+    bottom:-20px;
+    color:#ff8fab;
+    animation:floatUp linear forwards;
+    z-index:999;
+}
+
+@keyframes floatUp{
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+
+@media(max-width:768px){
+    .main-title{
+        font-size:2.5rem;
+    }
+
+    .heading{
+        font-size:2.2rem;
+    }
+
+    .typewriter{
+        white-space:normal;
+        border:none;
+        width:100%;
+        animation:none;
+    }
+
+    .couple-photo{
+        width:180px;
+        height:180px;
+    }
+}
+.music-player{
+    position:fixed;
+    top:20px;
+    right:20px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    z-index:9999;
+
+}
+
+.music-card{
+    width:110px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(10px);
+    padding:10px;
+    border-radius:20px;
+    text-align:center;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 0 15px rgba(255,255,255,0.2);
+}
+
+.music-card:hover{
+    transform:scale(1.08);
+}
+
+.music-card img{
+    width:100%;
+    height:90px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.music-card p{
+    margin-top:8px;
+    font-size:0.85rem;
+    color:white;
+}
+
+.stop-btn{
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    background:#ff4f9a;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.stop-btn:hover{
+    transform:scale(1.05);
+}
+#volumeControl{
+    width:110px;
+    cursor:pointer;
+    accent-color:#ff4f9a;
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+    <div class="loader-heart">❤️</div>
+    <div class="loader-text">
+        Preparing something special for the most beautiful girl in my world...
+    </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="main-title">Happy 2 Month Anniversary ❤️</h1>
+
+        <p class="typewriter">
+            These two months became the happiest part of my life.
+        </p>
+
+        <img src="IMG_7667.jpeg" class="couple-photo">
+
+        <div class="timer" id="timer"></div>
+
+        <div class="btns">
+            <a href="#timeline" class="btn">Our Story 📖</a>
+            <a href="#love" class="btn">Reasons I Love You 💌</a>
+            <a href="#surprise" class="btn">Open Surprise 🎁</a>
+        </div>
+    </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline" id="timeline">
+    <h2 class="heading">Our Story 🌸</h2>
+
+    <div class="timeline-container">
+        <div class="timeline-card">
+            <h3>🌷 The Day We Met</h3>
+            <p>
+                I never thought holding your hand on that faithful day could completely change my world.
+                But then you happened.I AM SOOO GLAD I HELD YOUR HANDS❤❤
+            </p>
+        </div>
+
+        <div class="timeline-card">
+            <h3>💬 Our Late Night Talks</h3>
+            <p>
+                Somehow talking to you became my favorite part of every day.AND I HOPE 
+                 WE GET TO TALK LIKE THIS FOREVER.❤❤
+            </p>
+        </div>
+
+        <div class="timeline-card">
+            <h3>❤️ The Moment I Realized</h3>
+            <p>
+                Somewhere between the laughs, the smiles, and the memories,
+                I realized I was completely in love with you.I realized i loved every single
+                detail about you that made you you MUAHHH MUAHH MY BBY❤❤❤
+                
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- LOVE REASONS -->
+<section class="love-section" id="love">
+    <h2 class="heading">Reasons I Love You 💕</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">🥺</div>
+                <div class="card-back">Your smile and text fixes my worst days🌹🌹.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">🌸</div>
+                <div class="card-back">You make ordinary moments feel magical✨✨.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">💖</div>
+                <div class="card-back">You make distance feel smaller❤❤.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">✨</div>
+                <div class="card-back">You make me feel at ease and home.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">🌙</div>
+                <div class="card-back">Talking to you is the best part of my nights.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">🫶</div>
+                <div class="card-back">You make my life happier just by existing💕💕💖.</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- GALAXY -->
+<section class="galaxy">
+    <div class="stars"></div>
+
+    <div class="galaxy-content">
+        <h2 class="heading">Even Across The Distance 🌌</h2>
+
+        <p class="galaxy-text">
+            Even when miles separate us, my heart still finds you.
+            No matter how far away you are, you will always be my favorite person,
+            my safest place, and my greatest happiness.I WILL ALWAYS TREASURE YOU.❤❤❤
+        </p>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+    <h2 class="heading">Our Memories 📸</h2>
+
+    <div class="gallery-grid">
+
+        <div class="polaroid">
+            <img src="3162DB34-E364-47FC-BD28-C3DE3D7AA1A7.jpeg">
+            <div class="caption">My favorite smile ❤️</div>
+        </div>
+
+        <div class="polaroid">
+            <img src="IMG_7696.gif">
+            <div class="caption">The moments I replay forever ✨</div>
+        </div>
+
+        <div class="polaroid">
+            <img src="IMG_7665.jpeg">
+            <div class="caption">Still makes my heart melt 🥺</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SURPRISE -->
+<section class="surprise" id="surprise">
+    <h2 class="heading">A Little Surprise For You 🎁</h2>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/2099/2099199.png" class="envelope" id="openLetter">
+
+    <div class="letter" id="letter">
+        <h2>To My Love ❤️</h2>
+
+        <p>
+            Thank you for existing in my life.
+            Thank you for making ordinary days feel beautiful.
+            Thank you for every laugh, every late night talks, every smile.
+            
+            These 2 months became some of the happiest moments of my life.
+            And honestly,
+            I cannot wait to create a million more memories with you.
+            
+            No distance,no argument and no any other forces in the universe could ever change how deeply I love you.
+            You mean more to me than words could ever explain. MYY RENEE MY BBYY MY LOVEE MUAHHH
+            
+            Happy 2 Month Anniversary, BBYYY ❤️ I LOVE YOU SOSOSOSOSO MUCHH💖❤❤
+        </p>
+    </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+    <h1>2 Months Down.<br>Forever To Go ❤️</h1>
+
+    <p>
+        Distance may keep us apart for now,
+        but nothing could ever make me stop loving you and holding you tight in my arms with lots of kisses.❤🥰
+    </p>
+
+    <div class="big-heart">💖</div>
+</section>
+
+<!-- MUSIC PLAYER -->
+<div class="music-player">
+
+    <div class="music-card" onclick="playSong('song1')">
+        <img src="Capture2.jpg">
+        <p>Our Song 💖</p>
+    </div>
+
+    <div class="music-card" onclick="playSong('song2')">
+        <img src="Screenshot 2026-05-14 143138.jpg">
+        <p>Late Night 🌙</p>
+    </div>
+
+    <div class="music-card" onclick="playSong('song3')">
+        <img src="Capture.jpg">
+        <p>Forever ✨</p>
+    </div>
+
+    <button class="stop-btn" onclick="stopMusic()">
+        Stop Music ⏹️
+<input type="range" 
+       min="0" 
+       max="1" 
+       step="0.01" 
+       value="1"
+       id="volumeControl">
+    </button>
+
+</div>
+
+<!-- AUDIO FILES -->
+<audio id="song1" src="08 Sanctuary.mp3"></audio>
+<audio id="song2" src="02 Best Part (feat. H.E.R.).mp3"></audio>
+<audio id="song3" src="01 Her.mp3"></audio>
+
+<script>
+// LOADER
+window.addEventListener('load',()=>{
+    setTimeout(()=>{
+        document.getElementById('loader').style.display='none';
+    },2500)
+})
+
+// TIMER
+const startDate = new Date('2026-03-16T00:00:00');
+
+function updateTimer(){
+    const now = new Date();
+    const diff = now - startDate;
+
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff / (1000*60*60)) % 24);
+    const minutes = Math.floor((diff / (1000*60)) % 60);
+
+    document.getElementById('timer').innerHTML =
+        `${days} days ${hours} hours ${minutes} minutes of loving you ❤️`;
+}
+
+setInterval(updateTimer,1000);
+updateTimer();
+
+// STARS
+const starsContainer = document.querySelector('.stars');
+
+for(let i=0;i<150;i++){
+    const star = document.createElement('div');
+    star.classList.add('star');
+
+    star.style.left = Math.random()*100 + '%';
+    star.style.top = Math.random()*100 + '%';
+    star.style.animationDuration = (Math.random()*3+1)+'s';
+
+    starsContainer.appendChild(star);
+}
+
+// LETTER OPEN
+const openLetter = document.getElementById('openLetter');
+const letter = document.getElementById('letter');
+
+openLetter.addEventListener('click',()=>{
+    letter.style.display='block';
+
+    for(let i=0;i<50;i++){
+        createHeart();
+    }
+})
+
+// FLOATING HEARTS
+function createHeart(){
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+
+    heart.innerHTML='💖';
+
+    heart.style.left=Math.random()*100+'vw';
+    heart.style.fontSize=Math.random()*30+20+'px';
+    heart.style.animationDuration=Math.random()*3+3+'s';
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000)
+}
+
+setInterval(createHeart,700);
+
+
+const songs = [
+    document.getElementById("song1"),
+    document.getElementById("song2"),
+    document.getElementById("song3")
+];
+
+function playSong(id){
+
+    songs.forEach(song=>{
+        song.pause();
+        song.currentTime = 0;
+    });
+
+    const selectedSong = document.getElementById(id);
+    selectedSong.play();
+}
+
+function stopMusic(){
+    songs.forEach(song=>{
+        song.pause();
+        song.currentTime = 0;
+    });
+}
+const volumeControl = document.getElementById("volumeControl");
+
+volumeControl.addEventListener("input", () => {
+
+    songs.forEach(song => {
+        song.volume = volumeControl.value;
+    });
+
+});
+
+</script>
+
+</body>
+</html>
